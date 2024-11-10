@@ -1,7 +1,7 @@
 package com.challange.picpay.service;
 
-import com.challange.picpay.domain.user.User;
-import com.challange.picpay.dto.UserDTO;
+import com.challange.picpay.model.entity.user.User;
+import com.challange.picpay.model.dto.UserDTO;
 
 import java.math.BigDecimal;
 import java.util.List;

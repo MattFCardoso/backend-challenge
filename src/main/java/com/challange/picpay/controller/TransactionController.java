@@ -1,7 +1,7 @@
 package com.challange.picpay.controller;
 
-import com.challange.picpay.domain.transaction.Transaction;
-import com.challange.picpay.dto.TransactionDTO;
+import com.challange.picpay.model.entity.transaction.Transaction;
+import com.challange.picpay.model.dto.TransactionDTO;
 import com.challange.picpay.service.impl.TransactionServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,8 +1,8 @@
 package com.challange.picpay.service.impl;
 
-import com.challange.picpay.domain.user.User;
-import com.challange.picpay.domain.user.UserType;
-import com.challange.picpay.dto.UserDTO;
+import com.challange.picpay.model.entity.user.User;
+import com.challange.picpay.model.entity.user.UserType;
+import com.challange.picpay.model.dto.UserDTO;
 import com.challange.picpay.repository.UserRepository;
 import com.challange.picpay.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

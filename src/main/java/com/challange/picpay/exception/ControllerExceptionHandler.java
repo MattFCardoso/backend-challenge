@@ -1,6 +1,6 @@
 package com.challange.picpay.exception;
 
-import com.challange.picpay.dto.ExceptionDTO;
+import com.challange.picpay.model.dto.ExceptionDTO;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

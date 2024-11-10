@@ -1,6 +1,6 @@
-package com.challange.picpay.domain.transaction;
+package com.challange.picpay.model.entity.transaction;
 
-import com.challange.picpay.domain.user.User;
+import com.challange.picpay.model.entity.user.User;
 import jakarta.persistence.*;
 import lombok.*;
 

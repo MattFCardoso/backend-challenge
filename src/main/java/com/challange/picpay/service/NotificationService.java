@@ -1,6 +1,6 @@
 package com.challange.picpay.service;
 
-import com.challange.picpay.domain.user.User;
+import com.challange.picpay.model.entity.user.User;
 
 public interface NotificationService {
 

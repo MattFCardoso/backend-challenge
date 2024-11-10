@@ -1,4 +1,4 @@
-package com.challange.picpay.dto;
+package com.challange.picpay.model.dto;
 
 import java.math.BigDecimal;
 

@@ -1,6 +1,6 @@
 package com.challange.picpay.repository;
 
-import com.challange.picpay.domain.user.User;
+import com.challange.picpay.model.entity.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

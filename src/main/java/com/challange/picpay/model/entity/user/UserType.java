@@ -1,4 +1,4 @@
-package com.challange.picpay.domain.user;
+package com.challange.picpay.model.entity.user;
 
 public enum UserType {
 
