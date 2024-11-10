@@ -2,7 +2,7 @@ package com.challange.picpay.controller;
 
 import com.challange.picpay.domain.user.User;
 import com.challange.picpay.dto.UserDTO;
-import com.challange.picpay.service.UserServiceImpl;
+import com.challange.picpay.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

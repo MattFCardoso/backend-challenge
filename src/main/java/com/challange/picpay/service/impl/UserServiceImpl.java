@@ -1,23 +1,23 @@
-package com.challange.picpay.service;
+package com.challange.picpay.service.impl;
 
 import com.challange.picpay.domain.user.User;
 import com.challange.picpay.domain.user.UserType;
 import com.challange.picpay.dto.UserDTO;
 import com.challange.picpay.repository.UserRepository;
+import com.challange.picpay.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 @Service
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository repository;
-//todo: create custom exceptions
 
+    @Override
     public void validateTransaction (User sender, BigDecimal amount) throws Exception {
         if (sender.getUserType() == UserType.MERCHANT){
             throw new Exception("Merchants cannot make transactions");
@@ -27,20 +27,24 @@ public class UserServiceImpl {
         }
     }
 
+    @Override
     public User findUserById(Long id) throws Exception {
         return this.repository.findUserById(id).orElseThrow(() -> new Exception("User not found"));
     }
 
+    @Override
     public User createUser(UserDTO userDTO) {
         User newUser = new User(userDTO);
         this.saveUser(newUser);
         return newUser;
     }
 
+    @Override
     public void saveUser(User user){
         this.repository.save(user);
     }
 
+    @Override
     public List<User> getAllUsers() {
         return this.repository.findAll();
     }

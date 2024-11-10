@@ -1,7 +1,9 @@
-package com.challange.picpay.service;
+package com.challange.picpay.service.impl;
 
 import com.challange.picpay.domain.user.User;
 import com.challange.picpay.dto.NotificationDTO;
+import com.challange.picpay.service.NotificationService;
+import jakarta.persistence.Id;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,11 +12,12 @@ import org.springframework.web.client.RestTemplate;
 
 @Service
 @Slf4j
-public class NotificationServiceImpl {
+public class NotificationServiceImpl implements NotificationService {
 
     @Autowired
     private RestTemplate restTemplate;
 
+    @Override
     public void sendNotification(User user, String message) throws Exception {
         String email = user.getEmail();
         NotificationDTO notificationRequest = new NotificationDTO(email, message);
