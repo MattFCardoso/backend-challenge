@@ -6,6 +6,7 @@ import com.challange.picpay.service.impl.TransactionServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,6 +19,10 @@ public class TransactionController {
     @PostMapping
     public ResponseEntity<Transaction> createTransaction(@RequestBody TransactionDTO transactionDTO) throws Exception {
         Transaction newTransaction = this.transactionService.createTransaction(transactionDTO);
+
+        if (ObjectUtils.isEmpty(transactionDTO)){
+            return ResponseEntity.unprocessableEntity().build();  
+        }
         return new ResponseEntity<>(newTransaction, HttpStatus.CREATED);
     }
 
