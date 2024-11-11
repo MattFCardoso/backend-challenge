@@ -42,16 +42,73 @@ The goal of this project is to create a simplified payment platform similar to P
 - **Authorization Service**: [https://util.devi.tools/api/v2/authorize](https://util.devi.tools/api/v2/authorize)
 - **Notification Service**: [https://util.devi.tools/api/v1/notify](https://util.devi.tools/api/v1/notify)
 
-## Getting Started
+## Docker Instructions
+
+You can build and run this application using Docker.
+
+### Prerequisites
+
+Make sure you have **Docker** installed on your machine. You can follow the installation guide from the official Docker website: [Docker Installation Guide](https://docs.docker.com/get-docker/).
+
+### Building the Docker Image
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/picpay-challenge.git
+   git clone git@github.com:MattFCardoso/backend-challenge.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd picpay-challenge
+   cd backend-challenge
+   ```
+
+3. Build the Docker image:
+   ```bash
+   docker build -t picpay:1.0 .
+   ```
+
+### Running the Docker Container
+
+Once the image is built, you can run the application in a Docker container:
+
+1. Run the container:
+   ```bash
+   docker run -p 8080:8080 backend-challenge
+   ```
+
+   This will expose the application on port `8080` of your localhost.
+
+2. Access the application in your browser:
+   - Visit `http://localhost:8080` to interact with the application.
+
+### Stopping the Container
+
+To stop the Docker container, press `Ctrl+C` or use the following command:
+
+```bash
+docker stop <container_id>
+```
+
+You can find the `<container_id>` by running:
+
+```bash
+docker ps
+```
+
+---
+
+## Getting Started Locally
+
+If you prefer to run the application locally without Docker, you can follow these steps:
+
+1. Clone this repository:
+   ```bash
+   git clone git@github.com:MattFCardoso/backend-challenge.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd backend-challenge
    ```
 
 3. Build and run the application:
@@ -65,33 +122,27 @@ The goal of this project is to create a simplified payment platform similar to P
 
 ### User Registration
 
-- `POST /api/users/register`: Register a new user (either ordinary or retailer).
+- `POST /users`: Register a new user (either ordinary or retailer).
 - **Request body**:
   ```json
   {
-    "fullName": "John Doe",
+    "firstName": "John",
+  "lastName: "Doe",
     "cpf": "12345678900",
     "email": "johndoe@example.com",
-    "password": "password123"
+    "password": "password123",
+  "userType: "COMMON"
   }
   ```
 
 ### Transfer Money
 
-- `POST /api/transactions/transfer`: Transfer money from one user to another (or merchant).
+- `POST /transactions: Transfer money from one user to another (or merchant).
 - **Request body**:
   ```json
   {
-    "senderCpf": "12345678900",
-    "receiverCpf": "09876543210",
+    "senderId": "1",
+    "receiverId": "2",
     "amount": 50.00
   }
   ```
-
-### Get Balance
-
-- `GET /api/users/{cpf}/balance`: Retrieve the current balance of a user.
-
----
-
-Let me know if you'd like to add or adjust anything!
